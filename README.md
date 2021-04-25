@@ -16,43 +16,6 @@
 
 # 
 ## treatment model 
-- name_variable	fields	Null	Relaction
-- province_state 	Char_Field	FALSE	
-- country 	Char_Field	FALSE	
-- uwi 	Integer_Field	FALSE	Forienkey
-- active_ind 	Char_Field	FALSE	
-- source	Char_Field	FALSE	
-- license_id	Char_Field	FALSE	
-- dril_id	Integer_Field	FALSE	
-- comp_source	Char_Field	FALSE	
-- comp_obs_no	Char_Field	FALSE	
-- changeby	Char_Field	FALSE	
-- changedate	Date_Field	FALSE	
-- created_by	Char_Field	FALSE	
-- created_date	Date_Field	FALSE	
-- treatment_obs_no	Integer_Field	FALSE	
-- stageno	Integer_Field	FALSE	
-- treatment_top	Integer_Field	FALSE	
-- treatment_base	Integer_Field	FALSE	
-- total_no_of_statges	Integer_Field	FALSE	
-- casing_ind_type	Char_Field	FALSE	
-- data_source	Char_Field	FALSE	
-- line_ind	Integer_Field	FALSE	
-- treatment_type	Char_Field	FALSE	
-- simulaton_type	Char_Field	FALSE	
-- pressure_pump_co	Integer_Field	FALSE	
-- treatment_co	Char_Field	FALSE	
-- top_strait_unit_id	Char_Field	FALSE	
-- top_age	Integer_Field	FALSE	
-- base_strait_unit_id	Char_Field	FALSE	
-- base_age	Integer_Field	FALSE	
-- treatment_remark	Char_Field	FALSE	
-
-
-
-
-
-
 
 
 

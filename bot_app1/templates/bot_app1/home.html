@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+<div class='container-fluid'>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_table}}
+        <input type="submit" value="Submit">
+    </form>
+</div>
+    <div class = 'table-responsive'>
+        <table class="table table-sm">
+            <tr>
+                   <th>province_state</th>
+                   <th>country</th>
+                   <th>uwi</th>
+                   <th>active_ind</th>
+                   <th>source</th>
+                   <th>license_id</th>
+                   <th>dril_id</th>
+                   <th>comp_source</th>
+                   <th>comp_obs_no</th>
+                   <th>changeby</th>
+                   <th>changedate</th>
+                   <th>created_by</th>
+                   <th>created_date</th>
+                   <th>treatment_obs_no</th>
+                   <th>stageno</th>
+                   <th>treatment_top</th>
+                   <th>treatment_base</th>
+                   <th>total_no_of_statges</th>
+                   <th>casing_ind_type</th>
+                   <th>data_source</th>
+                   <th>line_ind</th>
+                   <th>treatment_type</th>
+                   <th>simulaton_type</th>
+                   <th>pressure_pump_co</th>
+                   <th>treatment_co</th>
+                   <th>top_strait_unit_id</th>
+                   <th>top_age</th>
+                   <th>base_strait_unit_id</th>
+                   <th>base_age</th>
+                   <th>treatment_remark</th> 
+            </tr>
+            {% for data in datas %}
+                <tr>
+                    <td>{{data.province_state}}</td>
+                    <td>{{data.country}}</td>
+                    <td>{{data.uwi}}</td>
+                    <td>{{data.active_ind}}</td>
+                    <td>{{data.source}}</td>
+                    <td>{{data.license_id}}</td>
+                    <td>{{data.dril_id}}</td>
+                    <td>{{data.comp_source}}</td>
+                    <td>{{data.comp_obs_no}}</td>
+                    <td>{{data.changeby}}</td>
+                    <td>{{data.changedate}}</td>
+                    <td>{{data.created_by}}</td>
+                    <td>{{data.created_date}}</td>
+                    <td>{{data.treatment_obs_no}}</td>
+                    <td>{{data.stageno}}</td>
+                    <td>{{data.treatment_top}}</td>
+                    <td>{{data.treatment_base}}</td>
+                    <td>{{data.total_no_of_statges}}</td>
+                    <td>{{data.casing_ind_type}}</td>
+                    <td>{{data.data_source}}</td>
+                    <td>{{data.line_ind}}</td>
+                    <td>{{data.treatment_type}}</td>
+                    <td>{{data.simulaton_type}}</td>
+                    <td>{{data.pressure_pump_co}}</td>
+                    <td>{{data.treatment_co}}</td>
+                    <td>{{data.top_strait_unit_id}}</td>
+                    <td>{{data.top_age}}</td>
+                    <td>{{data.base_strait_unit_id}}</td>
+                    <td>{{data.base_age}}</td>
+                    <td>{{data.treatment_remark}}</td>   
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+</html>
