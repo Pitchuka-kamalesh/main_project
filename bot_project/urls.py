@@ -19,4 +19,6 @@ from bot_app1 import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name='home'),
+    path('treat/',views.treatment,name='treat'),
+    path('per/',views.performance,name='per'),
 ]
