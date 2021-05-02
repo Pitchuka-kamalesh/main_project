@@ -12,9 +12,9 @@ def treatment(request):
         form = Treatment_Form(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('treat')
         else:
-            return redirect('home')
+            return redirect('treat')
     data = Treatment_Model.objects.all()
     context = {"form":form,"datas":data}
     return render(request,'bot_app1/home.html',context)
@@ -26,9 +26,9 @@ def performance(request):
         form = Performance_Form(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('per')
         else:
-            return redirect('home')
+            return redirect('per')
     data = PerformanceModel.objects.all()
     context = {"form":form,"datas":data}
     return render(request,'bot_app1/performance.html',context)

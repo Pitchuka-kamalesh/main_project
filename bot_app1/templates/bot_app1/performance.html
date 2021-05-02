@@ -6,85 +6,164 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <title>Document</title>
+    <style>
+        .flows{
+            width:100%;
+            height: 400px;
+            overflow: scroll;
+        }
+        form {
+          display: grid;
+          grid-template-columns : auto auto auto auto;
+          padding : 10px;
+          margin: 10px;
+
+
+        }
+        table{
+                text-align : left;
+                position: relative;
+                border-collapse: collapse;
+        }
+        th{
+            background:orange;
+            position: sticky;
+            top: 0;
+            text-align : center;
+            margin-left: 20px;
+            margin-right: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            
+        }
+        td{
+
+          text-align : center;
+        }
+
+    </style>
 </head>
 <body>
-<div class='container-fluid'>
-    <form method="post">
-        {% csrf_token %}
-        {{form.as_table}}
-        <input type="submit" value="Submit">
+<div class='container'>
+      <form method="post">
+        {% csrf_token %} 
+          {% for field in form %}
+            <ul>
+            <label>{{field.label}}</label><br>
+            {{field}}
+            </ul>
+          {% endfor %}
+        <center>
+          <input type="submit" value="Submit" />
+        </center>
+      </form>
     </form>
 </div>
-    {% comment %} <div class = 'table-responsive'>
-        <table class="table table-sm">
+<div class = 'table flows'>
+        <table class="table table-dark table-striped">
+        
             <tr>
-                   <th>province_state</th>
-                   <th>country</th>
-                   <th>uwi</th>
-                   <th>active_ind</th>
-                   <th>source</th>
-                   <th>license_id</th>
-                   <th>dril_id</th>
-                   <th>comp_source</th>
-                   <th>comp_obs_no</th>
-                   <th>changeby</th>
-                   <th>changedate</th>
-                   <th>created_by</th>
-                   <th>created_date</th>
-                   <th>treatment_obs_no</th>
-                   <th>stageno</th>
-                   <th>treatment_top</th>
-                   <th>treatment_base</th>
-                   <th>total_no_of_statges</th>
-                   <th>casing_ind_type</th>
-                   <th>data_source</th>
-                   <th>line_ind</th>
-                   <th>treatment_type</th>
-                   <th>simulaton_type</th>
-                   <th>pressure_pump_co</th>
-                   <th>treatment_co</th>
-                   <th>top_strait_unit_id</th>
-                   <th>top_age</th>
-                   <th>base_strait_unit_id</th>
-                   <th>base_age</th>
-                   <th>treatment_remark</th> 
+                <th>uwi</th>
+                <th>source</th>
+                <th>perforation_obs_no</th>
+                <th>completion_obs_no</th>
+                <th>active_ind</th>
+                <th>top_depth</th>
+                <th>top_depth_uom</th>
+                <th>top_tvd_depth</th>
+                <th>top_tvd_depth_uom</th>
+                <th>base_depth</th>
+                <th>base_depth_uom</th>
+                <th>base_reservoir</th>
+                <th>base_tvd_depth</th>
+                <th>base_tvd_depth_uom</th>
+                <th>top_strat_unit_id</th>
+                <th>top_strat_age</th>
+                <th>base_strat_unit_id</th>
+                <th>base_strat_age</th>
+                <th>perforation_date</th>
+                <th>completion_source</th>
+                <th>completion_status</th>
+                <th>perforation_angle</th>
+                <th>completion_status_type</th>
+                <th>current_status_date</th>
+                <th>perforation_ba_id</th>
+                <th>perforation_count</th>
+                <th>perforation_interval_type</th>
+                <th>perforation_density</th>
+                <th>perforation_diameter</th>
+                <th>perforation_diameter_uom</th>
+                <th>perforation_method</th>
+                <th>perforation_per_uom</th>
+                <th>perforation_phase</th>
+                <th>perforation_type</th>
+                <th>cluster_per_stage</th>
+                <th>row_quality</th>
+                <th>province_state</th>
+                <th>remark</th>
+                <th>charge_type</th>
+                <th>charge_size</th>
+                <th>charge_size_uom</th>
+                <th>stage_no</th>
+                <th>row_changed_by</th>
+                <th>row_changed_date</th>
+                <th>row_created_by</th>
+                <th>row_created_date</th>
             </tr>
+
             {% for data in datas %}
                 <tr>
-                    <td>{{data.province_state}}</td>
-                    <td>{{data.country}}</td>
                     <td>{{data.uwi}}</td>
-                    <td>{{data.active_ind}}</td>
                     <td>{{data.source}}</td>
-                    <td>{{data.license_id}}</td>
-                    <td>{{data.dril_id}}</td>
-                    <td>{{data.comp_source}}</td>
-                    <td>{{data.comp_obs_no}}</td>
-                    <td>{{data.changeby}}</td>
-                    <td>{{data.changedate}}</td>
-                    <td>{{data.created_by}}</td>
-                    <td>{{data.created_date}}</td>
-                    <td>{{data.treatment_obs_no}}</td>
-                    <td>{{data.stageno}}</td>
-                    <td>{{data.treatment_top}}</td>
-                    <td>{{data.treatment_base}}</td>
-                    <td>{{data.total_no_of_statges}}</td>
-                    <td>{{data.casing_ind_type}}</td>
-                    <td>{{data.data_source}}</td>
-                    <td>{{data.line_ind}}</td>
-                    <td>{{data.treatment_type}}</td>
-                    <td>{{data.simulaton_type}}</td>
-                    <td>{{data.pressure_pump_co}}</td>
-                    <td>{{data.treatment_co}}</td>
-                    <td>{{data.top_strait_unit_id}}</td>
-                    <td>{{data.top_age}}</td>
-                    <td>{{data.base_strait_unit_id}}</td>
-                    <td>{{data.base_age}}</td>
-                    <td>{{data.treatment_remark}}</td>   
+                    <td>{{data.perforation_obs_no}}</td>
+                    <td>{{data.completion_obs_no}}</td>
+                    <td>{{data.active_ind}}</td>
+                    <td>{{data.top_depth}}</td>
+                    <td>{{data.top_depth_uom}}</td>
+                    <td>{{data.top_tvd_depth}}</td>
+                    <td>{{data.top_tvd_depth_uom}}</td>
+                    <td>{{data.base_depth}}</td>
+                    <td>{{data.base_depth_uom}}</td>
+                    <td>{{data.base_reservoir}}</td>
+                    <td>{{data.base_tvd_depth}}</td>
+                    <td>{{data.base_tvd_depth_uom}}</td>
+                    <td>{{data.top_strat_unit_id}}</td>
+                    <td>{{data.top_strat_age}}</td>
+                    <td>{{data.base_strat_unit_id}}</td>
+                    <td>{{data.base_strat_age}}</td>
+                    <td>{{data.perforation_date}}</td>
+                    <td>{{data.completion_source}}</td>
+                    <td>{{data.completion_status}}</td>
+                    <td>{{data.perforation_angle}}</td>
+                    <td>{{data.completion_status_type}}</td>
+                    <td>{{data.current_status_date}}</td>
+                    <td>{{data.perforation_ba_id}}</td>
+                    <td>{{data.perforation_count}}</td>
+                    <td>{{data.perforation_interval_type}}</td>
+                    <td>{{data.perforation_density}}</td>
+                    <td>{{data.perforation_diameter}}</td>
+                    <td>{{data.perforation_diameter_uom}}</td>
+                    <td>{{data.perforation_method}}</td>
+                    <td>{{data.perforation_per_uom}}</td>
+                    <td>{{data.perforation_phase}}</td>
+                    <td>{{data.perforation_type}}</td>
+                    <td>{{data.cluster_per_stage}}</td>
+                    <td>{{data.row_quality}}</td>
+                    <td>{{data.province_state}}</td>
+                    <td>{{data.remark}}</td>
+                    <td>{{data.charge_type}}</td>
+                    <td>{{data.charge_size}}</td>
+                    <td>{{data.charge_size_uom}}</td>
+                    <td>{{data.stage_no}}</td>
+                    <td>{{data.row_changed_by}}</td>
+                    <td>{{data.row_changed_date}}</td>
+                    <td>{{data.row_created_by}}</td>
+                    <td>{{data.row_created_date}}</td>  
                 </tr>
             {% endfor %}
+
         </table>
-    </div> {% endcomment %}
+    </div> 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
